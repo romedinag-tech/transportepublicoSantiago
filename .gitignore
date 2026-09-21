@@ -1,0 +1,7 @@
+# El tablero es estático: se versionan index.html, config.js, assets/ y data/*.
+_work/
+*.zip
+*.parquet
+*.txt
+.DS_Store
+Thumbs.db

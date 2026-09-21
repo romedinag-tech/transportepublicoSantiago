@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════════════════════════════════
+   TOKENS — Centro de Mando · Transporte Gran Concepcion
+   Single source of truth for color, type, space, motion.
+   Loaded FIRST; all other CSS consumes these, never raw hex.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Surfaces — ink-navy layers, NOT flat black ── */
+  --bg-void:    #060912;
+  --bg-base:    #0B1020;
+  --surface-1:  #121A30;
+  --surface-2:  #19223C;
+  --line:       #233152;
+  --line-soft:  #1A2440;
+
+  /* ── Text ── */
+  --text-hi:    #EAF0FB;
+  --text-mid:   #9DAAC6;
+  --text-lo:    #5E6B89;
+
+  /* ── Semantic signals — each color does ONE job ── */
+  --live:   #34E1C4;  /* teal: operating now / healthy / online */
+  --ref:    #6C8FF5;  /* indigo: baseline / historical */
+  --warn:   #F4B740;  /* amber: speed excess / watch */
+  --alert:  #FF5D73;  /* coral: non-compliance / critical */
+
+  --accent: var(--live);
+
+  /* ── Typography — 3 roles ── */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-ui:      "IBM Plex Sans", system-ui, sans-serif;
+  --font-data:    "IBM Plex Mono", ui-monospace, monospace;
+
+  /* ── Type scale ── */
+  --fs-display:  clamp(22px, 2.4vw, 28px);
+  --fs-title:    15px;
+  --fs-body:     13.5px;
+  --fs-caption:  12px;
+  --fs-micro:    10.5px;
+  --fs-widget-title: 13px;
+  --fs-widget-sub:   11px;
+  --fs-kpi-lab:  11px;
+  --fs-kpi-val:  24px;
+  --fs-kpi-unit: 12px;
+  --fs-kpi-pct:  16px;
+  --fs-kpi-sub:  13px;
+  --fs-litem:    13.5px;
+  --fs-ctab:     13px;
+  --fs-seg:      12px;
+
+  /* ── Space (base 4 px) ── */
+  --s1: 4px;  --s2: 8px;  --s3: 12px;  --s4: 16px;
+  --s5: 20px; --s6: 24px; --s8: 32px;  --s10: 40px; --s12: 48px;
+
+  /* ── Radii ── */
+  --r-card:    16px;
+  --r-widget:  18px;
+  --r-control: 10px;
+  --r-pill:    999px;
+
+  /* ── Shadows (elevation) ── */
+  --shadow-card:   0 2px 8px -2px rgba(0,0,0,.35), 0 1px 2px -1px rgba(0,0,0,.2);
+  --shadow-widget: 0 18px 40px -24px rgba(0,0,0,.55), 0 2px 6px -2px rgba(0,0,0,.25);
+  --shadow-hover:  0 12px 32px -8px rgba(0,0,0,.5);
+  --shadow-glow-live:  0 0 20px -4px rgba(52,225,196,.25);
+  --shadow-glow-alert: 0 0 20px -4px rgba(255,93,115,.25);
+
+  /* ── Motion ── */
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 500ms;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-bounce: cubic-bezier(.34, 1.4, .64, 1);
+
+  /* ── Gradients ── */
+  --grad-brand: linear-gradient(135deg, var(--live), var(--ref));
+  --grad-panel: linear-gradient(180deg, var(--surface-1), var(--surface-2));
+  --grad-shine: linear-gradient(180deg, rgba(255,255,255,.04) 0%, transparent 40%);
+
+  /* ── Serie categórica de gráficos (el JS la lee vía cssv) ── */
+  --c1:#34E1C4; --c2:#6C8FF5; --c3:#F4B740; --c4:#FF5D73; --c5:#a78bfa;
+  --c6:#22d3ee; --c7:#f472b6; --c8:#4ade80; --c9:#fb923c; --c10:#38bdf8;
+
+  /* ── Status (semáforo de KPI / badges de ratio) ── */
+  --good:#34d399; --warning:#fbbf24; --critical:#fb7185; --nodata:#94a1ba;
+
+  /* ── Dominio: tipos de infraestructura ── */
+  --infra-corredor:#ec4899; --infra-pistabus:#f5a524; --infra-exclusiva:#34d399;
+  --infra-mixto:#94a3b8; --infra-none:#64748b; --infra-efectivo:#e879f9;
+
+  /* ── Dominio: terciles NSE ── */
+  --nse-bajo:#fb923c; --nse-medio:#94a3b8; --nse-alto:#2dd4bf;
+}
+
+/* ─── Bridge: map new tokens → legacy variable names ─── */
+:root {
+  --bg:      var(--bg-void);
+  --bg2:     var(--bg-base);
+  --panel:   var(--surface-1);
+  --panel2:  var(--surface-2);
+  --topbar:  rgba(11, 16, 32, .92);
+  --tx:      var(--text-hi);
+  --muted:   var(--text-mid);
+  --dim:     var(--text-lo);
+  --acc:     var(--accent);
+  --acc2:    var(--live);
+  --danger:  var(--alert);
+  --violet:  #a78bfa;
+  --hover:   rgba(255,255,255,.04);
+  --track:   var(--line-soft);
+  --chip:    rgba(18, 26, 48, .7);
+  --glow1:   rgba(52, 225, 196, .12);
+  --glow2:   rgba(108, 143, 245, .08);
+  --live-tint:   rgba(52, 225, 196, .12);
+  --live-border: rgba(52, 225, 196, .35);
+  --alert-tint:  rgba(255, 93, 115, .12);
+  --warn-tint:   rgba(244, 183, 64, .08);
+  --warn-border: rgba(244, 183, 64, .25);
+  --warn-text:   #f6d98a;
+  --ico-bg:      rgba(52, 225, 196, .10);
+  --subtle:      rgba(255, 255, 255, .05);
+  --ref-tint:    rgba(108, 143, 245, .14);
+  --ch-grid: var(--line-soft);
+  --ch-axis: var(--text-lo);
+  --ch-tip:  var(--surface-2);
+  --ch-line: rgba(35,49,82,.55);   /* línea de eje tenue en charts */
+  --line2:   var(--line);
+  --radius:  var(--r-card);
+  --radius-sm: var(--r-control);
+  --sans:  var(--font-ui);
+  --mono:  var(--font-data);
+}
+
+/* ─── Light theme — INSTITUCIONAL (papel · tinta navy · azul), emula el panel de uso de suelo ─── */
+:root[data-theme="light"] {
+  /* Superficies — papel institucional (bg gris muy claro, tarjetas blancas) */
+  --bg-void:    #F4F6FA;
+  --bg-base:    #FFFFFF;
+  --surface-1:  #FFFFFF;
+  --surface-2:  #EEF2F7;
+  --line:       #E3E8EF;
+  --line-soft:  #EDF1F6;
+
+  /* Tinta — navy casi negro (autoridad institucional) */
+  --text-hi:    #0E2338;
+  --text-mid:   #4A5A70;
+  --text-lo:    #7C8AA0;
+
+  /* Señales — AZUL institucional como acento primario (reemplaza el teal del modo oscuro) */
+  --live:   #1F6FEB;   /* azul: operando ahora / activo / selección */
+  --ref:    #8A6FB0;   /* púrpura mudo: baseline / histórico (distinguible del azul) */
+  --warn:   #C08A1E;   /* ámbar mudo: exceso de velocidad */
+  --alert:  #B2182B;   /* rojo divergente institucional: crítico */
+
+  /* Superficies compuestas / bridge */
+  --topbar: rgba(255,255,255,.92);
+  --hover:  rgba(14,35,56,.045);
+  --chip:   #F1F4F8;
+  --glow1:  rgba(31,111,235,.05);
+  --glow2:  rgba(22,54,90,.04);
+  --live-tint:   rgba(31,111,235,.10);
+  --live-border: rgba(31,111,235,.28);
+  --alert-tint:  rgba(178,24,43,.09);
+  --warn-tint:   rgba(192,138,30,.08);
+  --warn-border: rgba(192,138,30,.22);
+  --warn-text:   #8A5A0F;
+  --ico-bg:      rgba(31,111,235,.08);
+  --subtle:      rgba(14,35,56,.05);
+  --ref-tint:    rgba(138,111,176,.12);
+  --track:       #E6EAF1;
+
+  /* Marca institucional: navy → azul */
+  --grad-brand:  linear-gradient(135deg, #16365A, #1F6FEB);
+  --grad-panel:  #FFFFFF;
+  --grad-shine:  linear-gradient(180deg, rgba(255,255,255,.5) 0%, transparent 40%);
+
+  /* Sombras institucionales — sutiles, planas, tinte navy */
+  --shadow-card:      0 1px 2px rgba(14,35,56,.05), 0 1px 3px rgba(14,35,56,.05);
+  --shadow-widget:    0 1px 3px rgba(14,35,56,.05), 0 10px 28px rgba(14,35,56,.07);
+  --shadow-hover:     0 8px 24px rgba(14,35,56,.11);
+  --shadow-glow-live: 0 0 0 3px rgba(31,111,235,.12);
+
+  /* Charts (ECharts los lee vía getComputedStyle) */
+  --ch-grid: #EDF1F6;
+  --ch-axis: #7C8AA0;
+  --ch-tip:  #FFFFFF;
+  --ch-line: rgba(124,138,160,.35);
+}
+
+/* ─── Tema "Ámbar / Grafito" (dark cálido, acento oro). Lo usan DOS temas: la cara PULSO (cliente-a, con
+   re-layout) y la VISTA OSCURA de la cara GORE (gore-dark, sobre el layout ORIGINAL del GCCP — Rodrigo pidió
+   "la oscura ámbar tipo Temuco tal cual"). Comparten SOLO estos tokens; el re-layout/DSEG es solo cliente-a. ─── */
+:root[data-theme="cliente-a"],
+:root[data-theme="gore-dark"] {
+  /* Superficies — grafito cálido (café tostado), no negro-azulado */
+  --bg-void:   #12100E;  --bg-base:   #1A1714;
+  --surface-1: #221E19;  --surface-2: #2B2620;
+  --line:      #3A342B;  --line-soft: #241F19;
+  /* Texto — marfil cálido legible (text-lo aclarado a #9C9280 para pasar contraste AA 4.5 sobre tarjeta).
+     La fuente de reloj DSEG va SOLO en el título (ver styles.css); el resto usa las fuentes base legibles. */
+  --text-hi:   #F4EEE3;  --text-mid:  #B6AB98;  --text-lo: #9C9280;
+  /* Señales — oro como acento primario (reemplaza el teal) */
+  --live:  #E0A836;  --ref:  #7FA8C9;  --warn: #E8944A;  --alert: #E5604D;
+  /* Status */
+  --good:#9CBF6A; --warning:#E0A836; --critical:#E5604D; --nodata:#8A8072;
+  /* Serie categórica — liderada por cálidos */
+  --c1:#E0A836; --c2:#7FA8C9; --c3:#E8944A; --c4:#E5604D; --c5:#B58BB0;
+  --c6:#5FB8A8; --c7:#D97CA0; --c8:#9CBF6A; --c9:#D98C5A; --c10:#6F9BD1;
+  /* Dominio */
+  --infra-corredor:#D97CA0; --infra-pistabus:#E8944A; --infra-exclusiva:#9CBF6A;
+  --infra-mixto:#9A8F7D; --infra-none:#6E6558; --infra-efectivo:#B58BB0;
+  --nse-bajo:#E8944A; --nse-medio:#9A8F7D; --nse-alto:#5FB8A8;
+  /* Superficies compuestas / bridge (rgba de --live = 224,168,54) */
+  --topbar: rgba(26,23,20,.92);  --hover: rgba(255,255,255,.04);  --chip: rgba(34,30,25,.7);
+  --glow1: rgba(224,168,54,.12);  --glow2: rgba(127,168,201,.08);
+  --live-tint: rgba(224,168,54,.12);  --live-border: rgba(224,168,54,.35);
+  --alert-tint: rgba(229,96,77,.12);  --warn-tint: rgba(232,148,74,.08);
+  --warn-border: rgba(232,148,74,.25);  --warn-text: #F0C98A;
+  --ico-bg: rgba(224,168,54,.10);  --subtle: rgba(255,255,255,.05);
+  --ref-tint: rgba(127,168,201,.14);  --track: var(--line-soft);
+  /* Marca cálida: oro → rosa */
+  --grad-brand: linear-gradient(135deg, #E0A836, #D97CA0);
+  --grad-panel: linear-gradient(180deg, var(--surface-1), var(--surface-2));
+  --grad-shine: linear-gradient(180deg, rgba(255,255,255,.04) 0%, transparent 40%);
+  --shadow-glow-live: 0 0 20px -4px rgba(224,168,54,.25);
+  /* Charts */
+  --ch-grid: var(--line-soft);  --ch-axis: var(--text-lo);  --ch-tip: var(--surface-2);  --ch-line: rgba(58,52,43,.6);
+}
+
+/* ─── Variante CLARA de la cara PULSO — "Celeste / Papel" (data-theme="cliente-a-light").
+   Gemela clara del ámbar/grafito. Fondos pastel/celeste; acento primario VIRADO a azul institucional
+   (#1D6FB8, 4.90:1 AA) porque el oro sobre claro es ilegible (~1.8:1); el ámbar queda como guiño en
+   --warn y en la serie. Ondas del header: azul (--live) vs coral (--alert). Series SATURADAS (no pastel)
+   para contraste sobre el fondo luminoso. Paleta recomendada + verificada AA por agente de diseño. ─── */
+:root[data-theme="cliente-a-light"] {
+  /* Superficies (celeste-papel; void→surface-2 = de fondo a elevado) */
+  --bg-void:   #DCE6EF;  --bg-base:   #E8F0F7;
+  --surface-1: #F4F8FC;  --surface-2: #FFFFFF;
+  --line:      #C2D2E0;  --line-soft: #DCE6EF;
+  /* Texto (text-lo oscurecido a #5F6E7E para cruzar 4.5 sobre superficie clara) */
+  --text-hi:   #14212E;  --text-mid:  #48586A;  --text-lo: #5F6E7E;
+  /* Señales — azul institucional como acento primario; ámbar reasignado a --warn */
+  --live:  #1D6FB8;  --ref:  #6E8296;  --warn: #C57B14;  --alert: #D64535;
+  /* Status */
+  --good:#2E8B57; --warning:#C57B14; --critical:#C0392B; --nodata:#8A97A5;
+  /* Serie categórica — saturada para resaltar sobre claro */
+  --c1:#1D6FB8; --c2:#D97D1A; --c3:#C0392B; --c4:#1E8A6E; --c5:#8E44AD;
+  --c6:#0E9CB0; --c7:#C2417F; --c8:#6B8E23; --c9:#B5651D; --c10:#34568B;
+  /* Dominio */
+  --infra-corredor:#C2417F; --infra-pistabus:#D97D1A; --infra-exclusiva:#5A8C2A;
+  --infra-mixto:#8C7B63; --infra-none:#A8B0B8; --infra-efectivo:#8E44AD;
+  --nse-bajo:#D97D1A; --nse-medio:#8C8072; --nse-alto:#1E8A6E;
+  /* Superficies compuestas / bridge (rgba de --live = 29,111,184) */
+  --topbar: rgba(244,248,252,.85);  --hover: rgba(29,111,184,.08);  --chip: rgba(29,111,184,.10);
+  --glow1: rgba(29,111,184,.25);  --glow2: rgba(214,69,53,.22);
+  --live-tint: rgba(29,111,184,.12);  --live-border: rgba(29,111,184,.35);
+  --alert-tint: rgba(214,69,53,.12);  --warn-tint: rgba(197,123,20,.14);
+  --warn-border: rgba(197,123,20,.40);  --warn-text: #9A6410;
+  --ico-bg: rgba(29,111,184,.10);  --subtle: rgba(20,33,46,.05);
+  --ref-tint: rgba(110,130,150,.12);  --track: rgba(20,33,46,.08);
+  /* Marca: azul → cian */
+  --grad-brand: linear-gradient(135deg, #1D6FB8, #0E9CB0);
+  --grad-panel: linear-gradient(180deg, #FFFFFF, #F4F8FC);
+  --grad-shine: linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,0));
+  /* Sombras (planas, suaves, para claro) */
+  --shadow-card: 0 1px 3px rgba(20,33,46,.08);  --shadow-widget: 0 2px 8px rgba(20,33,46,.10);
+  --shadow-hover: 0 4px 16px rgba(20,33,46,.12);  --shadow-glow-live: 0 0 0 3px rgba(29,111,184,.20);
+  /* Charts */
+  --ch-grid: rgba(20,33,46,.08);  --ch-axis: #6B7B8C;  --ch-tip: #FFFFFF;  --ch-line: #1D6FB8;
+}
+
+/* ─── Cara "GORE Biobío" — SOLO re-color de la versión CLARA + logo (data-theme="gore", ?theme=gore).
+   NO es una cara "cliente-*": conserva el LAYOUT ORIGINAL del tablero (sin nav consolidado, sin fuente retro
+   ni ondas de PULSO) — es el pedido de Rodrigo: "solo la versión clara con los colores GORE y el logo".
+   Identidad del Gobierno Regional del Biobío MEDIDA de gorebiobio.cl: azul institucional #002A5A (primario,
+   14.2:1 sobre blanco) + verde de marca #6DAB24 (marcas; #4E7D1A su versión de texto AA). Fondos blanco/gris
+   muy claro. Paleta completa + AA verificada por agente de diseño. ─── */
+:root[data-theme="gore"] {
+  /* Superficies (claras, institucionales) */
+  --bg-void:    #E9ECF0;  --bg-base:    #F5F5F5;
+  --surface-1:  #FFFFFF;  --surface-2:  #F0F2F5;
+  --line:       #DDE1E6;  --line-soft:  #EBEEF1;
+  /* Texto (text-lo #737373 = 4.74:1 sobre blanco, AA) */
+  --text-hi:    #14243D;  --text-mid:   #575757;  --text-lo: #737373;
+  /* Señales — azul institucional primario */
+  --live:  #002A5A;  --ref:  #6B7785;  --warn: #D68A2B;  --alert: #B80F0F;
+  /* Status (verde de texto #4E7D1A = 4.92:1) */
+  --good:#4E7D1A; --warning:#C77D18; --critical:#B80F0F; --nodata:#9AA3AB;
+  /* Serie (lidera azul y verde de marca; todas ≥3:1 sobre blanco) */
+  --c1:#002A5A; --c2:#4E7D1A; --c3:#C4611A; --c4:#146C86; --c5:#8A1F5E;
+  --c6:#B80F0F; --c7:#5B4B9E; --c8:#1F7A4D; --c9:#A6851C; --c10:#4A5A6A;
+  /* Dominio */
+  --infra-corredor:#002A5A; --infra-pistabus:#146C86; --infra-exclusiva:#4E7D1A;
+  --infra-mixto:#C4611A; --infra-none:#9AA3AB; --infra-efectivo:#6DAB24;
+  --nse-bajo:#B5651D; --nse-medio:#6DAB24; --nse-alto:#002A5A;
+  /* Bridge (rgba de --live = 0,42,90) */
+  --topbar: rgba(255,255,255,.92);  --hover: rgba(0,42,90,.06);  --chip: rgba(0,42,90,.08);
+  --glow1: rgba(0,42,90,.14);  --glow2: rgba(109,171,36,.16);
+  --live-tint: rgba(0,42,90,.08);  --live-border: rgba(0,42,90,.35);
+  --alert-tint: rgba(184,15,15,.10);  --warn-tint: rgba(214,138,43,.14);
+  --warn-border: rgba(214,138,43,.45);  --warn-text: #8A5A12;
+  --ico-bg: rgba(0,42,90,.06);  --subtle: rgba(20,36,61,.55);
+  --ref-tint: rgba(87,87,87,.10);  --track: rgba(20,36,61,.10);
+  /* Marca: azul → verde */
+  --grad-brand: linear-gradient(135deg, #002A5A 0%, #6DAB24 100%);
+  --grad-panel: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
+  --grad-shine: linear-gradient(180deg, rgba(255,255,255,.60) 0%, rgba(255,255,255,0) 100%);
+  /* Sombras (planas) */
+  --shadow-card: 0 1px 2px rgba(20,36,61,.06), 0 1px 3px rgba(20,36,61,.10);
+  --shadow-widget: 0 1px 3px rgba(20,36,61,.08);
+  --shadow-hover: 0 4px 12px rgba(20,36,61,.12);  --shadow-glow-live: 0 0 0 3px rgba(0,42,90,.15);
+  /* Charts */
+  --ch-grid: #E4E7EB;  --ch-axis: #8A9199;  --ch-tip: #10233D;  --ch-line: #002A5A;
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}
