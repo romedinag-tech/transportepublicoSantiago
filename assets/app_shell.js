@@ -33,7 +33,7 @@ CITY.comunas=CITY.comunas||[]; CITY.comunasGeojson=CITY.comunasGeojson||"comunas
 CITY.live=!!CITY.live; CITY.liveBase=CITY.liveBase||""; CITY.voz=CITY.voz||{ejeSing:"eje",ejePlur:"ejes",EjePlur:"Ejes"};
 const _cap=t=>t?t.charAt(0).toUpperCase()+t.slice(1):t;
 const _liveUrl=n=> (CITY.live&&CITY.liveBase?CITY.liveBase:"data/")+n;
-const J = n => fetch(`data/${n}?v=206`).then(r=>{if(!r.ok)throw 0;return r.json();});
+const J = n => fetch(`data/${n}?v=207`).then(r=>{if(!r.ok)throw 0;return r.json();});
 // reloj en vivo (fecha + hora Chile) en el header — útil para las capturas
 function tickReloj(){
   const el = document.getElementById("hdr-reloj-txt"); if(!el) return;
@@ -279,7 +279,7 @@ const purposeLbl = p => (PURPOSES.find(x=>x[0]===p)||["","Todos"])[1];
 // para que index.html/assets sean idénticos entre ciudades. Se llama una vez al arrancar.
 function initCityChrome(){
   const nom=CITY.nombre||"la ciudad", V=CITY.voz||{ejeSing:"eje",ejePlur:"ejes",EjePlur:"Ejes"};
-  if(CITY.demanda){ const _db=document.getElementById("modo-demanda-btn"); if(_db) _db.style.display=""; }   // 3er modo solo si hay medio de pago
+  if(CITY.demanda||CITY.demandaStgo){ const _db=document.getElementById("modo-demanda-btn"); if(_db) _db.style.display=""; }   // 3er modo solo si hay medio de pago
   const set=(sel,html,attr)=>{ const el=typeof sel==="string"?document.querySelector(sel):sel; if(el){ if(attr) el.setAttribute(attr,html); else el.innerHTML=html; } };
   set(".hero-logo", CITY.sigla||nom.slice(0,2).toUpperCase());
   if(CITY.eyebrow) set(".eyebrow", CITY.eyebrow);
@@ -484,6 +484,20 @@ function render(){
   if($("congsub-sel")) $("congsub-sel").style.display = congsubRel ? "flex" : "none";
 
   // MODO DEMANDA (3er lente): validaciones del medio de pago = abordajes
+  // Santiago tiene su propia pestaña de demanda (viajes, OD, zonas 777): módulo aparte, cargado a demanda
+  const _dsv=$("demanda-stgo-view");
+  if(state.modo==="demanda" && CITY.demandaStgo && _dsv){
+    document.body.classList.remove("modo-infra"); document.body.classList.add("modo-demanda");
+    _dsv.style.display=""; $("demanda-view").style.display="none"; $("infra-view").style.display="none";
+    document.body.classList.add("demstgo");   // sin sidebar de líneas ni barra de comunas: la pestaña es metropolitana
+    $("scope-title").textContent="Demanda del transporte"; $("scope-sub").textContent=CITY.nombre+" · viajes registrados con tarjeta bip!";
+    $("reset-btn").style.display="none";
+    if(window.DemStgo) window.DemStgo.render();
+    else if(!document.getElementById("demstgo-js")){ const sc=document.createElement("script"); sc.id="demstgo-js";
+      const _sv=((document.querySelector('script[src*="app_shell.js"]')||{}).src||"").match(/v=(\d+)/); sc.src="assets/demanda_stgo.js?v="+(_sv?_sv[1]:Date.now()); sc.onload=()=>window.DemStgo&&window.DemStgo.render(); document.head.appendChild(sc); }
+    return;
+  }
+  if(_dsv){ _dsv.style.display="none"; document.body.classList.remove("demstgo"); }
   if(state.modo==="demanda"){
     document.body.classList.remove("modo-infra"); document.body.classList.add("modo-demanda");
     $("demanda-view").style.display=""; $("infra-view").style.display="none";
@@ -3942,6 +3956,9 @@ function renderEvolucion(){
       document.querySelectorAll("#modo-switch button").forEach(x=>x.classList.toggle("on",x===b));
       render();
     });
+    // enlace directo a un lente: ?modo=infra | ?modo=demanda (sólo si el botón está visible en esta ciudad)
+    { const _qm=new URLSearchParams(location.search).get("modo"), _qb=_qm&&document.querySelector(`#modo-switch button[data-modo="${_qm}"]`);
+      if(_qb && getComputedStyle(_qb).display!=="none") _qb.click(); }
     const _isr=$("infra-search"); if(_isr) _isr.oninput=()=>{ const q=_isr.value.toLowerCase().trim();
       document.querySelectorAll("#infra-list .icard").forEach(el=>{ el.style.display = (!q||el.textContent.toLowerCase().includes(q))?"":"none"; }); };
     J("cobertura_din_lineas.json").then(d=>{ DINL=d; renderCobDinLinea(); if(state.mapMode==="cover" && state.coverSub==="din") render(); }).catch(()=>{});

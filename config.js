@@ -11,6 +11,7 @@ window.CITY = {
   live: false,
   liveBase: "",
   demanda: false,
+  demandaStgo: true,
   repo: "transportepublicoSantiago",
   voz: {"ejeSing": "eje", "ejePlur": "ejes", "EjePlur": "Ejes"},
 };
