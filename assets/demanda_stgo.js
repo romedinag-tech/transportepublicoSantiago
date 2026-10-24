@@ -488,7 +488,11 @@
       <section class="widget"><div class="widget-h"><div class="min-w-0"><h3 id="ds-est-t">Estaciones con más subidas</h3><span class="sub">día laboral · clic en una estación (mapa o barra): su curva horaria</span></div></div>
         <div class="widget-b !p-2.5"><div id="ds-est" style="height:600px;width:100%"></div></div></section></div>
       ${widget("ds-mcurva","Subidas y bajadas por hora","día laboral promedio · bajadas = sólo etapas con destino estimado por la DTPM (sin escalar)",280)}
-      ${D.mh ? widget("ds-mhist","Subidas por día laboral, 2012–2026","cortes públicos de la DTPM (una semana tipo por corte) · línea llena = series comparables · punteado = no comparable (pandemia; tablas con validaciones repetidas)",320,"",D.mh._nota) : ""}`;
+      ${D.mh ? widget("ds-mhist","Subidas por día laboral, 2012–2026","puntos = muestra de cada corte público DTPM (una semana, mes variable) · línea de puntos = estimación del promedio ANUAL (muestra / factor del mes) · ◆ = año medido completo jul-2025→jun-2026 · llena = comparable, punteada = no comparable",340,"",(D.mh._nota||"")+(D.ma?" "+D.ma._nota:"")) : ""}
+      ${D.ma ? `<div class="ds-g2">
+        ${widget("ds-mtipo","Demanda diaria por tipo de día · año jul-2025 → jun-2026","promedio de todos los días del año · laboral = lun–vie hábil · festivo = feriado que no cae en domingo",280)}
+        ${widget("ds-mestac","Estacionalidad del año (día laboral, sábado y domingo)","promedio diario de cada mes / promedio del año · 1 = un mes promedio",280)}
+      </div>` : ""}`;
     $("ds-lin").onclick = e => { const b=e.target.closest("button"); if(!b) return; S.linea=b.dataset.l; S.est=null; pintaMetroV(); };
     if(mapaM){ mapaM.remove(); mapaM=null; capaE=null; }
     mapaM = L.map("ds-mmap",{center:[CITY.lat0,CITY.lon0], zoom:11, preferCanvas:true}); basemap(mapaM);
@@ -526,12 +530,52 @@
                  ["B","2022–2023 tablas con repetidos (estimación sin repetidos)",t.warn,"dashed"],["C","2023-11 → 2026 (comparable)",t.live,"solid"]];
     $("ds-mhist").closest("section").querySelector("h3").textContent = "Subidas por día laboral, 2012–2026 · " +
       (e ? `${tit(e.est)}${st&&st.desde&&st.desde!=="2012-04" ? " (aparece desde "+st.desde+")" : ""}` : "red de Metro");
-    chart("ds-mhist").setOption({tooltip:{trigger:"axis", formatter:ps=>{ const p=ps.find(x=>x.value!=null); if(!p) return "";
-        const c=cs[p.dataIndex]; return `${c.corte} · serie ${c.serie}<br><b>${fmt(p.value)}</b> subidas/día laboral<br><span style="font-size:11px">${(c.nota||"").slice(0,140)}</span>`; }},
-      legend:{top:0, textStyle:{color:t.mid}}, grid:G({top:34}),
-      xAxis:{type:"category", data:ks, ...ejes(t), axisLabel:{color:t.mid, rotate:45, fontSize:10}}, yAxis:{type:"value", min:0, ...ejes(t)},
+    // estimación del promedio anual por corte (muestra / factor del mes, kpi_metro_anual.py) y el año medido completo
+    const ma = D.ma, ek = e && ma ? (ma.estaciones[e.est] ? e.est : Object.keys(ma.estaciones).find(x=>norm(x)===norm(e.est))) : null;
+    // la estimación anual sólo en las series comparables (A y C): no debe unir 2019 con la pandemia ni con 2022–2023
+    const estA = c => { if(!ma || (c.serie!=="A" && c.serie!=="C")) return null;
+      const r = e ? (ek && (ma.estaciones[ek].por_anio||{})[c.corte]) : ma.por_anio_total[c.corte];
+      return r && r.L ? r.L[1] : null; };
+    const medido = ma ? (e ? (ek && ma.estaciones[ek].anio.L ? ma.estaciones[ek].anio.L.sub : null) : ma.total.METRO.L.sub) : null;
+    const X = ks.concat(ma ? ["año 25–26"] : []), pad = a => a.concat(ma ? [null] : []);
+    chart("ds-mhist").setOption({tooltip:{trigger:"axis", formatter:ps=>{ const i=ps[0].dataIndex;
+        if(i>=cs.length) return `Año jul-2025 → jun-2026 (todos los días)<br><b>${fmt(medido)}</b> subidas/día laboral, medido`;
+        const c=cs[i], m=ps.find(x=>x.seriesName.startsWith("Estimación")), mu=ps.find(x=>x.value!=null&&!x.seriesName.startsWith("Estimación"));
+        return `${c.corte} · serie ${c.serie}` + (mu?`<br>muestra del corte: <b>${fmt(mu.value)}</b>`:"") + (m&&m.value!=null?`<br>estimación del promedio anual: <b>${fmt(m.value)}</b>`:"")
+          + `<br><span style="font-size:11px">${(c.nota||"").slice(0,140)}</span>`; }},
+      legend:{top:0, textStyle:{color:t.mid}}, grid:G({top:44}),
+      xAxis:{type:"category", data:X, ...ejes(t), axisLabel:{color:t.mid, rotate:45, fontSize:10}}, yAxis:{type:"value", min:0, ...ejes(t)},
       series:BLO.map(([b,n,c,ls])=>({name:n, type:"line", symbolSize:7, connectNulls:false, lineStyle:{color:c,width:2,type:ls},
-        itemStyle:{color:c}, data:cs.map(x=>x.serie===b ? v(x) : null)}))}, true);
+        itemStyle:{color:c}, data:pad(cs.map(x=>x.serie===b ? v(x) : null))}))
+        .concat(ma ? [{name:"Estimación del promedio anual", type:"line", symbol:"circle", symbolSize:4, connectNulls:false,
+                       lineStyle:{color:t.tx, width:1.4, type:"dotted"}, itemStyle:{color:t.tx}, data:pad(cs.map(estA))},
+                      {name:"Año medido (todos los días)", type:"scatter", symbol:"diamond", symbolSize:13, itemStyle:{color:"#e879f9"},
+                       data:X.map((_,i)=>i===X.length-1 ? medido : null)}] : [])}, true);
+    if(ma) tipoDia(ek, e);
+  }
+  function tipoDia(ek, e){
+    const ma = D.ma, t = th(); if(!ma || !$("ds-mtipo")) return;
+    const r = e ? (ek ? ma.estaciones[ek].anio : {}) : ma.total.METRO, ks = ["L","S","D","F"], nom = {L:"Laboral",S:"Sábado",D:"Domingo",F:"Festivo"};
+    $("ds-mtipo").closest("section").querySelector("h3").textContent = "Demanda diaria por tipo de día · jul-2025 → jun-2026 · " + (e ? tit(e.est) : "Metro completo");
+    chart("ds-mtipo").setOption({tooltip:{trigger:"axis",axisPointer:{type:"shadow"},formatter:ps=>{ const k=ks[ps[0].dataIndex];
+        return `${nom[k]} · ${fmt(ma.dias[k])} días<br>`+ps.map(p=>`${p.marker}${p.seriesName}: <b>${fmt(p.value)}</b>`).join("<br>"); }},
+      legend:{top:0,textStyle:{color:t.mid}}, grid:G({top:30}),
+      xAxis:{type:"category", data:ks.map(k=>nom[k]), ...ejes(t)}, yAxis:{type:"value", ...ejes(t)},
+      series:[{name:"Subidas", type:"bar", data:ks.map(k=>(r[k]||{}).sub||null), itemStyle:{color:t.live},
+               label:{show:true,position:"top",color:t.mid,fontSize:10,formatter:p=>fmt(p.value)}},
+              {name:"Bajadas (con destino estimado)", type:"bar", data:ks.map(k=>(r[k]||{}).baj||null), itemStyle:{color:t.warn}}]}, true);
+    // estacionalidad del año: factor del mes por tipo de día (Metro completo) y día laboral por día de la semana
+    const es = ma.estacionalidad, MM = ["07","08","09","10","11","12","01","02","03","04","05","06"];
+    const NM = {"01":"ene","02":"feb","03":"mar","04":"abr","05":"may","06":"jun","07":"jul","08":"ago","09":"sep","10":"oct","11":"nov","12":"dic"};
+    const dow = es.factor_dow_laboral, dn = {1:"lun",2:"mar",3:"mié",4:"jue",5:"vie"};
+    $("ds-mestac").closest("section").querySelector(".sub").textContent = "Metro completo · promedio diario de cada mes / promedio del año · 1 = mes promedio · día laboral por día de la semana: "
+      + Object.entries(dow).map(([k,v])=>`${dn[k]} ${v.factor.toLocaleString("es-CL",{minimumFractionDigits:2,maximumFractionDigits:2})}`).join(" · ");
+    chart("ds-mestac").setOption({tooltip:{trigger:"axis",valueFormatter:v=>v==null?"—":v.toLocaleString("es-CL",{minimumFractionDigits:3,maximumFractionDigits:3})},
+      legend:{top:0,textStyle:{color:t.mid}}, grid:G({top:30}),
+      xAxis:{type:"category", data:MM.map(m=>NM[m]), ...ejes(t)}, yAxis:{type:"value", min:0.5, ...ejes(t, v=>v.toLocaleString("es-CL",{maximumFractionDigits:2}))},
+      series:[["L","Laboral",COL_DT.L],["S","Sábado",COL_DT.S],["D","Domingo",COL_DT.D]].map(([k,n,c])=>({name:n, type:"line", symbolSize:6,
+          data:MM.map(m=>(es.factor_mes[m]||{})[k]||null), lineStyle:{color:c,width:2}, itemStyle:{color:c}}))
+        .concat([{type:"line", data:MM.map(()=>1), symbol:"none", lineStyle:{color:t.line,type:"dashed",width:1}, silent:true, tooltip:{show:false}}])}, true);
   }
   function curva(){
     historia();
@@ -668,10 +712,10 @@
 
   async function carga(){
     const opc = n => J(n).catch(()=>null);
-    const [sis, zon, od, met, gz, gc, ex, zx, mh] = await Promise.all([J("stgo_sistema.json"), J("stgo_zonas.json"), J("stgo_od.json"),
+    const [sis, zon, od, met, gz, gc, ex, zx, mh, ma] = await Promise.all([J("stgo_sistema.json"), J("stgo_zonas.json"), J("stgo_od.json"),
       J("demanda_metro.json").catch(()=>({estaciones:[]})), J("zonas777.geojson"), J(CITY.comunasGeojson), opc("stgo_extra.json"),
-      opc("stgo_zonas_extra.json"), opc("stgo_metro_hist.json")]);
-    D = {sis, zon, od, met, ex, mh, zx: zx || {zonas:{}, comunas:{}}}; geoZ = gz; geoC = gc;
+      opc("stgo_zonas_extra.json"), opc("stgo_metro_hist.json"), opc("stgo_metro_anual.json")]);
+    D = {sis, zon, od, met, ex, mh, ma, zx: zx || {zonas:{}, comunas:{}}}; geoZ = gz; geoC = gc;
   }
   let _cargando = null;
   window.DemStgo = { render(){ esqueleto(); if(!D.sis){ if(!_cargando) _cargando = carga().then(dibuja).catch(e=>{
