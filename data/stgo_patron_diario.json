@@ -1,0 +1,3169 @@
+{
+ "_nota": "Patrón diario por semana publicada de etapas DTPM (subidas = etapas validadas). Factores sobre el promedio de los días laborales válidos de la misma semana. Ver patron_diario_semanas_informe.md.",
+ "generado": "2026-10-24T17:39:03",
+ "banda_una_semana": {
+  "fuente": "etapas SAIP propias (cubos _work/agg/demanda_etapas t y m)",
+  "periodo": [
+   "2025-06-01",
+   "2026-06-30"
+  ],
+  "dias_con_dato": 390,
+  "excluidos": {
+   "feriados_nacionales": [
+    "2025-06-20",
+    "2025-06-29",
+    "2025-07-16",
+    "2025-08-15",
+    "2025-09-18",
+    "2025-09-19",
+    "2025-10-12",
+    "2025-10-31",
+    "2025-11-01",
+    "2025-11-16",
+    "2025-12-08",
+    "2025-12-25",
+    "2026-01-01",
+    "2026-04-03",
+    "2026-04-04",
+    "2026-05-01",
+    "2026-05-21",
+    "2026-06-21",
+    "2026-06-29"
+   ],
+   "truncados": [
+    "2025-07-24",
+    "2025-08-20",
+    "2025-10-29",
+    "2025-12-05",
+    "2025-12-06",
+    "2025-12-07",
+    "2026-02-05",
+    "2026-03-02"
+   ],
+   "modos_faltantes": [
+    "2025-12-05",
+    "2025-12-06",
+    "2025-12-07"
+   ]
+  },
+  "semanas": [
+   "2025-06-02",
+   "2025-06-09",
+   "2025-06-30",
+   "2025-07-07",
+   "2025-07-28",
+   "2025-08-04",
+   "2025-09-01",
+   "2025-09-08",
+   "2025-09-22",
+   "2025-09-29",
+   "2025-10-13",
+   "2025-10-20",
+   "2025-11-17",
+   "2025-11-24",
+   "2025-12-15",
+   "2026-01-05",
+   "2026-01-12",
+   "2026-01-19",
+   "2026-01-26",
+   "2026-02-09",
+   "2026-02-16",
+   "2026-02-23",
+   "2026-03-09",
+   "2026-03-16",
+   "2026-03-23",
+   "2026-04-06",
+   "2026-04-13",
+   "2026-05-04",
+   "2026-05-11",
+   "2026-06-01",
+   "2026-06-08",
+   "2026-06-22"
+  ],
+  "semanas_lectivas": [
+   "2025-06-02",
+   "2025-06-09",
+   "2025-06-30",
+   "2025-08-04",
+   "2025-09-01",
+   "2025-09-08",
+   "2025-09-22",
+   "2025-09-29",
+   "2025-10-13",
+   "2025-10-20",
+   "2025-11-17",
+   "2025-11-24",
+   "2026-03-09",
+   "2026-03-16",
+   "2026-03-23",
+   "2026-04-06",
+   "2026-04-13",
+   "2026-05-04",
+   "2026-05-11",
+   "2026-06-01",
+   "2026-06-08",
+   "2026-06-22"
+  ],
+  "lectivas": {
+   "definicion": "semanas de la banda cuyo lunes cae en marzo–junio o agosto–noviembre (sin verano dic–feb ni julio), meses en que se publican los cortes DTPM",
+   "metro": {
+    "n_semanas": 22,
+    "SL": {
+     "mediana": 0.5605,
+     "min": 0.5116,
+     "max": 0.5996,
+     "desv": 0.021,
+     "p10": 0.54,
+     "p90": 0.591
+    },
+    "DL": {
+     "mediana": 0.3151,
+     "min": 0.2802,
+     "max": 0.3656,
+     "desv": 0.021,
+     "p10": 0.296,
+     "p90": 0.3463
+    },
+    "factores": {
+     "lunes": {
+      "mediana": 0.9867,
+      "min": 0.9661,
+      "max": 1.0477,
+      "desv": 0.0187,
+      "p10": 0.9704,
+      "p90": 1.0188
+     },
+     "martes": {
+      "mediana": 1.0068,
+      "min": 0.994,
+      "max": 1.0664,
+      "desv": 0.0172,
+      "p10": 0.9964,
+      "p90": 1.0249
+     },
+     "miercoles": {
+      "mediana": 1.0074,
+      "min": 0.9476,
+      "max": 1.0659,
+      "desv": 0.0254,
+      "p10": 0.9866,
+      "p90": 1.0309
+     },
+     "jueves": {
+      "mediana": 1.0058,
+      "min": 0.7943,
+      "max": 1.0252,
+      "desv": 0.0514,
+      "p10": 0.998,
+      "p90": 1.0189
+     },
+     "viernes": {
+      "mediana": 0.9986,
+      "min": 0.9723,
+      "max": 1.0386,
+      "desv": 0.0156,
+      "p10": 0.9772,
+      "p90": 1.0136
+     }
+    }
+   },
+   "sistema": {
+    "n_semanas": 22,
+    "SL": {
+     "mediana": 0.5469,
+     "min": 0.5043,
+     "max": 0.5779,
+     "desv": 0.0171,
+     "p10": 0.5274,
+     "p90": 0.5719
+    },
+    "DL": {
+     "mediana": 0.3119,
+     "min": 0.2807,
+     "max": 0.3475,
+     "desv": 0.0172,
+     "p10": 0.2922,
+     "p90": 0.3383
+    },
+    "factores": {
+     "lunes": {
+      "mediana": 0.9968,
+      "min": 0.9803,
+      "max": 1.064,
+      "desv": 0.0191,
+      "p10": 0.9861,
+      "p90": 1.0301
+     },
+     "martes": {
+      "mediana": 1.0075,
+      "min": 0.9977,
+      "max": 1.0751,
+      "desv": 0.0172,
+      "p10": 0.9983,
+      "p90": 1.0244
+     },
+     "miercoles": {
+      "mediana": 1.0074,
+      "min": 0.9365,
+      "max": 1.0631,
+      "desv": 0.0274,
+      "p10": 0.9776,
+      "p90": 1.028
+     },
+     "jueves": {
+      "mediana": 1.0034,
+      "min": 0.7739,
+      "max": 1.0253,
+      "desv": 0.054,
+      "p10": 0.9887,
+      "p90": 1.0145
+     },
+     "viernes": {
+      "mediana": 0.9939,
+      "min": 0.9375,
+      "max": 1.0271,
+      "desv": 0.019,
+      "p10": 0.9714,
+      "p90": 1.0071
+     }
+    }
+   },
+   "bus_zp": {
+    "n_semanas": 22,
+    "SL": {
+     "mediana": 0.5253,
+     "min": 0.4957,
+     "max": 0.5627,
+     "desv": 0.0149,
+     "p10": 0.5133,
+     "p90": 0.5425
+    },
+    "DL": {
+     "mediana": 0.3095,
+     "min": 0.2802,
+     "max": 0.3472,
+     "desv": 0.0153,
+     "p10": 0.2953,
+     "p90": 0.326
+    },
+    "factores": {
+     "lunes": {
+      "mediana": 1.0057,
+      "min": 0.9894,
+      "max": 1.0797,
+      "desv": 0.0205,
+      "p10": 0.9925,
+      "p90": 1.0386
+     },
+     "martes": {
+      "mediana": 1.0089,
+      "min": 0.9976,
+      "max": 1.0838,
+      "desv": 0.0182,
+      "p10": 1.0003,
+      "p90": 1.0317
+     },
+     "miercoles": {
+      "mediana": 1.0073,
+      "min": 0.9263,
+      "max": 1.0601,
+      "desv": 0.0299,
+      "p10": 0.9694,
+      "p90": 1.0336
+     },
+     "jueves": {
+      "mediana": 1.0013,
+      "min": 0.7548,
+      "max": 1.0305,
+      "desv": 0.0568,
+      "p10": 0.9792,
+      "p90": 1.014
+     },
+     "viernes": {
+      "mediana": 0.9888,
+      "min": 0.9044,
+      "max": 1.0216,
+      "desv": 0.0238,
+      "p10": 0.9648,
+      "p90": 1.0017
+     }
+    }
+   }
+  },
+  "metro": {
+   "n_semanas": 32,
+   "SL": {
+    "mediana": 0.5683,
+    "min": 0.5116,
+    "max": 0.6731,
+    "desv": 0.0353,
+    "p10": 0.5448,
+    "p90": 0.6117
+   },
+   "DL": {
+    "mediana": 0.3246,
+    "min": 0.2802,
+    "max": 0.4069,
+    "desv": 0.0306,
+    "p10": 0.2989,
+    "p90": 0.3782
+   },
+   "factores": {
+    "lunes": {
+     "mediana": 0.9874,
+     "min": 0.9549,
+     "max": 1.0477,
+     "desv": 0.0174,
+     "p10": 0.9704,
+     "p90": 1.0135
+    },
+    "martes": {
+     "mediana": 1.0056,
+     "min": 0.983,
+     "max": 1.0664,
+     "desv": 0.0159,
+     "p10": 0.9964,
+     "p90": 1.0249
+    },
+    "miercoles": {
+     "mediana": 1.0068,
+     "min": 0.9476,
+     "max": 1.0659,
+     "desv": 0.0218,
+     "p10": 0.989,
+     "p90": 1.0309
+    },
+    "jueves": {
+     "mediana": 1.0037,
+     "min": 0.7943,
+     "max": 1.0252,
+     "desv": 0.0427,
+     "p10": 0.9946,
+     "p90": 1.0158
+    },
+    "viernes": {
+     "mediana": 0.9986,
+     "min": 0.9174,
+     "max": 1.0462,
+     "desv": 0.0221,
+     "p10": 0.9766,
+     "p90": 1.015
+    }
+   },
+   "anual": {
+    "dias_laborales": 262,
+    "sabados": 52,
+    "domingos": 49,
+    "promedio_laboral": 2245992,
+    "SL": 0.5605,
+    "DL": 0.3244,
+    "factores": {
+     "lunes": 0.994,
+     "martes": 1.0125,
+     "miercoles": 0.9999,
+     "jueves": 1.0135,
+     "viernes": 0.9787
+    }
+   }
+  },
+  "sistema": {
+   "n_semanas": 32,
+   "SL": {
+    "mediana": 0.5525,
+    "min": 0.5043,
+    "max": 0.646,
+    "desv": 0.0308,
+    "p10": 0.5301,
+    "p90": 0.5945
+   },
+   "DL": {
+    "mediana": 0.3225,
+    "min": 0.2807,
+    "max": 0.4015,
+    "desv": 0.0286,
+    "p10": 0.2968,
+    "p90": 0.3727
+   },
+   "factores": {
+    "lunes": {
+     "mediana": 0.997,
+     "min": 0.9641,
+     "max": 1.064,
+     "desv": 0.0182,
+     "p10": 0.9861,
+     "p90": 1.0301
+    },
+    "martes": {
+     "mediana": 1.0069,
+     "min": 0.9845,
+     "max": 1.0751,
+     "desv": 0.0165,
+     "p10": 0.9983,
+     "p90": 1.0244
+    },
+    "miercoles": {
+     "mediana": 1.0066,
+     "min": 0.9365,
+     "max": 1.0631,
+     "desv": 0.024,
+     "p10": 0.9818,
+     "p90": 1.028
+    },
+    "jueves": {
+     "mediana": 1.0023,
+     "min": 0.7739,
+     "max": 1.0253,
+     "desv": 0.0449,
+     "p10": 0.9887,
+     "p90": 1.0132
+    },
+    "viernes": {
+     "mediana": 0.9939,
+     "min": 0.8931,
+     "max": 1.0371,
+     "desv": 0.0254,
+     "p10": 0.9714,
+     "p90": 1.0071
+    }
+   },
+   "anual": {
+    "dias_laborales": 262,
+    "sabados": 52,
+    "domingos": 49,
+    "promedio_laboral": 4636342,
+    "SL": 0.5436,
+    "DL": 0.3214,
+    "factores": {
+     "lunes": 1.003,
+     "martes": 1.0142,
+     "miercoles": 0.998,
+     "jueves": 1.009,
+     "viernes": 0.9734
+    }
+   }
+  },
+  "bus_zp": {
+   "n_semanas": 32,
+   "SL": {
+    "mediana": 0.5328,
+    "min": 0.4957,
+    "max": 0.6156,
+    "desv": 0.0275,
+    "p10": 0.5133,
+    "p90": 0.5814
+   },
+   "DL": {
+    "mediana": 0.3176,
+    "min": 0.2802,
+    "max": 0.3924,
+    "desv": 0.0273,
+    "p10": 0.2953,
+    "p90": 0.3656
+   },
+   "factores": {
+    "lunes": {
+     "mediana": 1.0059,
+     "min": 0.9723,
+     "max": 1.0797,
+     "desv": 0.0201,
+     "p10": 0.9925,
+     "p90": 1.0386
+    },
+    "martes": {
+     "mediana": 1.0083,
+     "min": 0.9866,
+     "max": 1.0838,
+     "desv": 0.018,
+     "p10": 0.9976,
+     "p90": 1.0317
+    },
+    "miercoles": {
+     "mediana": 1.0061,
+     "min": 0.9263,
+     "max": 1.0601,
+     "desv": 0.0266,
+     "p10": 0.975,
+     "p90": 1.0336
+    },
+    "jueves": {
+     "mediana": 1.0008,
+     "min": 0.7548,
+     "max": 1.0305,
+     "desv": 0.0474,
+     "p10": 0.9792,
+     "p90": 1.0111
+    },
+    "viernes": {
+     "mediana": 0.9888,
+     "min": 0.8703,
+     "max": 1.0274,
+     "desv": 0.0297,
+     "p10": 0.9648,
+     "p90": 1.0021
+    }
+   },
+   "anual": {
+    "dias_laborales": 262,
+    "sabados": 52,
+    "domingos": 49,
+    "promedio_laboral": 2316716,
+    "SL": 0.5249,
+    "DL": 0.3168,
+    "factores": {
+     "lunes": 1.0115,
+     "martes": 1.0161,
+     "miercoles": 0.9963,
+     "jueves": 1.0046,
+     "viernes": 0.9681
+    }
+   }
+  }
+ },
+ "cortes": [
+  {
+   "corte": "2014-05",
+   "anio": 2014,
+   "mes": 5,
+   "fuentes": [
+    "etapas201405_transparencia"
+   ],
+   "nota": "",
+   "dias_presentes": [
+    {
+     "fecha": "2014-05-25",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1744466,
+     "metro": 594449
+    },
+    {
+     "fecha": "2014-05-26",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5660374,
+     "metro": 2233419
+    },
+    {
+     "fecha": "2014-05-27",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5672350,
+     "metro": 2234317
+    },
+    {
+     "fecha": "2014-05-28",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5696027,
+     "metro": 2249828
+    },
+    {
+     "fecha": "2014-05-29",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5542830,
+     "metro": 2204803
+    },
+    {
+     "fecha": "2014-05-30",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5859475,
+     "metro": 2384994
+    },
+    {
+     "fecha": "2014-05-31",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 3265465,
+     "metro": 1215121
+    },
+    {
+     "fecha": "2014-06-01",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1897558,
+     "metro": 663331
+    }
+   ],
+   "dias_laborales_usados": [
+    "2014-05-26",
+    "2014-05-27",
+    "2014-05-28",
+    "2014-05-29",
+    "2014-05-30"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.015,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5686211,
+    "factores": {
+     "lunes": 0.9955,
+     "martes": 0.9976,
+     "miercoles": 1.0017,
+     "jueves": 0.9748,
+     "viernes": 1.0305
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5743,
+    "DL": 0.3203,
+    "SL_por_fecha": {
+     "2014-05-31": 0.5743
+    },
+    "DL_por_fecha": {
+     "2014-05-25": 0.3068,
+     "2014-06-01": 0.3337
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2261472,
+    "factores": {
+     "lunes": 0.9876,
+     "martes": 0.988,
+     "miercoles": 0.9949,
+     "jueves": 0.9749,
+     "viernes": 1.0546
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5373,
+    "DL": 0.2781,
+    "SL_por_fecha": {
+     "2014-05-31": 0.5373
+    },
+    "DL_por_fecha": {
+     "2014-05-25": 0.2629,
+     "2014-06-01": 0.2933
+    }
+   },
+   "fuera_de_banda": [
+    "metro DL 0.278 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2015-04",
+   "anio": 2015,
+   "mes": 4,
+   "fuentes": [
+    "etapas201504_transparencia"
+   ],
+   "nota": "",
+   "dias_presentes": [
+    {
+     "fecha": "2015-04-18",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2927971,
+     "metro": 1083921
+    },
+    {
+     "fecha": "2015-04-19",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1692606,
+     "metro": 573758
+    },
+    {
+     "fecha": "2015-04-20",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5468177,
+     "metro": 2145714
+    },
+    {
+     "fecha": "2015-04-21",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5470811,
+     "metro": 2161353
+    },
+    {
+     "fecha": "2015-04-22",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5467358,
+     "metro": 2152559
+    },
+    {
+     "fecha": "2015-04-23",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5453818,
+     "metro": 2157323
+    },
+    {
+     "fecha": "2015-04-24",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5523603,
+     "metro": 2201441
+    },
+    {
+     "fecha": "2015-04-25",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2947587,
+     "metro": 1089287
+    }
+   ],
+   "dias_laborales_usados": [
+    "2015-04-20",
+    "2015-04-21",
+    "2015-04-22",
+    "2015-04-23",
+    "2015-04-24"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0146,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5476753,
+    "factores": {
+     "lunes": 0.9984,
+     "martes": 0.9989,
+     "miercoles": 0.9983,
+     "jueves": 0.9958,
+     "viernes": 1.0086
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5364,
+    "DL": 0.3091,
+    "SL_por_fecha": {
+     "2015-04-18": 0.5346,
+     "2015-04-25": 0.5382
+    },
+    "DL_por_fecha": {
+     "2015-04-19": 0.3091
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2163678,
+    "factores": {
+     "lunes": 0.9917,
+     "martes": 0.9989,
+     "miercoles": 0.9949,
+     "jueves": 0.9971,
+     "viernes": 1.0175
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5022,
+    "DL": 0.2652,
+    "SL_por_fecha": {
+     "2015-04-18": 0.501,
+     "2015-04-25": 0.5034
+    },
+    "DL_por_fecha": {
+     "2015-04-19": 0.2652
+    }
+   },
+   "fuera_de_banda": [
+    "metro SL 0.502 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]",
+    "metro DL 0.265 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2016-05",
+   "anio": 2016,
+   "mes": 5,
+   "fuentes": [
+    "etapas201605_transparencia"
+   ],
+   "nota": "",
+   "dias_presentes": [
+    {
+     "fecha": "2016-05-23",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5234485,
+     "metro": 2143627
+    },
+    {
+     "fecha": "2016-05-24",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5266882,
+     "metro": 2169000
+    },
+    {
+     "fecha": "2016-05-25",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5299580,
+     "metro": 2187236
+    },
+    {
+     "fecha": "2016-05-26",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5159490,
+     "metro": 2152064
+    },
+    {
+     "fecha": "2016-05-27",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5311013,
+     "metro": 2226312
+    },
+    {
+     "fecha": "2016-05-28",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2783940,
+     "metro": 1084845
+    },
+    {
+     "fecha": "2016-05-29",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1399890,
+     "metro": 560305
+    }
+   ],
+   "dias_laborales_usados": [
+    "2016-05-23",
+    "2016-05-24",
+    "2016-05-25",
+    "2016-05-26",
+    "2016-05-27"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0135,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5254290,
+    "factores": {
+     "lunes": 0.9962,
+     "martes": 1.0024,
+     "miercoles": 1.0086,
+     "jueves": 0.982,
+     "viernes": 1.0108
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5298,
+    "DL": 0.2664,
+    "SL_por_fecha": {
+     "2016-05-28": 0.5298
+    },
+    "DL_por_fecha": {
+     "2016-05-29": 0.2664
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2175648,
+    "factores": {
+     "lunes": 0.9853,
+     "martes": 0.9969,
+     "miercoles": 1.0053,
+     "jueves": 0.9892,
+     "viernes": 1.0233
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.4986,
+    "DL": 0.2575,
+    "SL_por_fecha": {
+     "2016-05-28": 0.4986
+    },
+    "DL_por_fecha": {
+     "2016-05-29": 0.2575
+    }
+   },
+   "fuera_de_banda": [
+    "sistema DL 0.266 fuera del rango de una semana lectiva 2025–26 [0.281–0.347]",
+    "metro SL 0.499 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]",
+    "metro DL 0.258 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2017-04",
+   "anio": 2017,
+   "mes": 4,
+   "fuentes": [
+    "etapas201704_laboral_transparencia"
+   ],
+   "nota": "Archivo sólo laboral.",
+   "dias_presentes": [
+    {
+     "fecha": "2017-04-06",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5424721,
+     "metro": 2286261
+    },
+    {
+     "fecha": "2017-04-07",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5383933,
+     "metro": 2314000
+    },
+    {
+     "fecha": "2017-04-12",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5417042,
+     "metro": 2287453
+    },
+    {
+     "fecha": "2017-04-17",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5265576,
+     "metro": 2200012
+    },
+    {
+     "fecha": "2017-04-18",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5385554,
+     "metro": 2257412
+    }
+   ],
+   "dias_laborales_usados": [
+    "2017-04-06",
+    "2017-04-07",
+    "2017-04-12",
+    "2017-04-17",
+    "2017-04-18"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.014,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5375365,
+    "factores": {
+     "jueves": 1.0092,
+     "viernes": 1.0016,
+     "miercoles": 1.0078,
+     "lunes": 0.9796,
+     "martes": 1.0019
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro": {
+    "promedio_laboral": 2269028,
+    "factores": {
+     "jueves": 1.0076,
+     "viernes": 1.0198,
+     "miercoles": 1.0081,
+     "lunes": 0.9696,
+     "martes": 0.9949
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "sólo días laborales",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2018-04",
+   "anio": 2018,
+   "mes": 4,
+   "fuentes": [
+    "etapas201804_laboral_transparencia"
+   ],
+   "nota": "Archivo sólo laboral.",
+   "dias_presentes": [
+    {
+     "fecha": "2018-04-09",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5919006,
+     "metro": 2626189
+    },
+    {
+     "fecha": "2018-04-10",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5895558,
+     "metro": 2619825
+    },
+    {
+     "fecha": "2018-04-11",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5924862,
+     "metro": 2645092
+    },
+    {
+     "fecha": "2018-04-12",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5817452,
+     "metro": 2633522
+    },
+    {
+     "fecha": "2018-04-13",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5978176,
+     "metro": 2695960
+    }
+   ],
+   "dias_laborales_usados": [
+    "2018-04-09",
+    "2018-04-10",
+    "2018-04-11",
+    "2018-04-12",
+    "2018-04-13"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0151,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5907011,
+    "factores": {
+     "lunes": 1.002,
+     "martes": 0.9981,
+     "miercoles": 1.003,
+     "jueves": 0.9848,
+     "viernes": 1.012
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro": {
+    "promedio_laboral": 2644118,
+    "factores": {
+     "lunes": 0.9932,
+     "martes": 0.9908,
+     "miercoles": 1.0004,
+     "jueves": 0.996,
+     "viernes": 1.0196
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "sólo días laborales",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2018-10",
+   "anio": 2018,
+   "mes": 10,
+   "fuentes": [
+    "etapas_octubre_18"
+   ],
+   "nota": "Un rar por día; sólo laboral.",
+   "dias_presentes": [
+    {
+     "fecha": "2018-10-08",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5897151,
+     "metro": 2634727
+    },
+    {
+     "fecha": "2018-10-09",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5942454,
+     "metro": 2654789
+    },
+    {
+     "fecha": "2018-10-10",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5953424,
+     "metro": 2664170
+    },
+    {
+     "fecha": "2018-10-11",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5925216,
+     "metro": 2666578
+    },
+    {
+     "fecha": "2018-10-12",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 6017528,
+     "metro": 2740677
+    }
+   ],
+   "dias_laborales_usados": [
+    "2018-10-08",
+    "2018-10-09",
+    "2018-10-10",
+    "2018-10-11",
+    "2018-10-12"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0154,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5947155,
+    "factores": {
+     "lunes": 0.9916,
+     "martes": 0.9992,
+     "miercoles": 1.0011,
+     "jueves": 0.9963,
+     "viernes": 1.0118
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro": {
+    "promedio_laboral": 2672188,
+    "factores": {
+     "lunes": 0.986,
+     "martes": 0.9935,
+     "miercoles": 0.997,
+     "jueves": 0.9979,
+     "viernes": 1.0256
+    },
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "sólo días laborales",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2019-04",
+   "anio": 2019,
+   "mes": 4,
+   "fuentes": [
+    "etapas_19"
+   ],
+   "nota": "Un rar por día.",
+   "dias_presentes": [
+    {
+     "fecha": "2019-04-08",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5985327,
+     "metro": 2814089
+    },
+    {
+     "fecha": "2019-04-09",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5960890,
+     "metro": 2824966
+    },
+    {
+     "fecha": "2019-04-10",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5963680,
+     "metro": 2815602
+    },
+    {
+     "fecha": "2019-04-11",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5947737,
+     "metro": 2853187
+    },
+    {
+     "fecha": "2019-04-12",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 6034129,
+     "metro": 2894429
+    },
+    {
+     "fecha": "2019-04-13",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 3133069,
+     "metro": 1439436
+    },
+    {
+     "fecha": "2019-04-14",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1733997,
+     "metro": 742314
+    }
+   ],
+   "dias_laborales_usados": [
+    "2019-04-08",
+    "2019-04-09",
+    "2019-04-10",
+    "2019-04-11",
+    "2019-04-12"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0144,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5978353,
+    "factores": {
+     "lunes": 1.0012,
+     "martes": 0.9971,
+     "miercoles": 0.9975,
+     "jueves": 0.9949,
+     "viernes": 1.0093
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5241,
+    "DL": 0.29,
+    "SL_por_fecha": {
+     "2019-04-13": 0.5241
+    },
+    "DL_por_fecha": {
+     "2019-04-14": 0.29
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2840455,
+    "factores": {
+     "lunes": 0.9907,
+     "martes": 0.9945,
+     "miercoles": 0.9913,
+     "jueves": 1.0045,
+     "viernes": 1.019
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5068,
+    "DL": 0.2613,
+    "SL_por_fecha": {
+     "2019-04-13": 0.5068
+    },
+    "DL_por_fecha": {
+     "2019-04-14": 0.2613
+    }
+   },
+   "fuera_de_banda": [
+    "metro SL 0.507 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]",
+    "metro DL 0.261 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2019-08",
+   "anio": 2019,
+   "mes": 8,
+   "fuentes": [
+    "tabla-etapas_201908"
+   ],
+   "nota": "Publicado como 'tabla-etapas.zip' (sin fecha en el nombre); dentro: etapas201908_laboral_transparencia y etapas201908_sab_dom_transparencia.",
+   "dias_presentes": [
+    {
+     "fecha": "2019-08-05",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5861956,
+     "metro": 2795639
+    },
+    {
+     "fecha": "2019-08-06",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5810967,
+     "metro": 2775419
+    },
+    {
+     "fecha": "2019-08-07",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5854009,
+     "metro": 2803103
+    },
+    {
+     "fecha": "2019-08-08",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5841160,
+     "metro": 2826254
+    },
+    {
+     "fecha": "2019-08-09",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5888830,
+     "metro": 2868165
+    },
+    {
+     "fecha": "2019-08-10",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 3126687,
+     "metro": 1461529
+    },
+    {
+     "fecha": "2019-08-11",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1738642,
+     "metro": 786874
+    }
+   ],
+   "dias_laborales_usados": [
+    "2019-08-05",
+    "2019-08-06",
+    "2019-08-07",
+    "2019-08-08",
+    "2019-08-09"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0156,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5851384,
+    "factores": {
+     "lunes": 1.0018,
+     "martes": 0.9931,
+     "miercoles": 1.0004,
+     "jueves": 0.9983,
+     "viernes": 1.0064
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5343,
+    "DL": 0.2971,
+    "SL_por_fecha": {
+     "2019-08-10": 0.5343
+    },
+    "DL_por_fecha": {
+     "2019-08-11": 0.2971
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2813716,
+    "factores": {
+     "lunes": 0.9936,
+     "martes": 0.9864,
+     "miercoles": 0.9962,
+     "jueves": 1.0045,
+     "viernes": 1.0194
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5194,
+    "DL": 0.2797,
+    "SL_por_fecha": {
+     "2019-08-10": 0.5194
+    },
+    "DL_por_fecha": {
+     "2019-08-11": 0.2797
+    }
+   },
+   "fuera_de_banda": [
+    "metro DL 0.280 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2020-03",
+   "anio": 2020,
+   "mes": 3,
+   "fuentes": [
+    "etapas202003_laboral_transparencia",
+    "etapas202003_sab_dom_transparencia"
+   ],
+   "nota": "Laboral 9–13 mar y fin de semana 7–8 mar en archivos distintos: el sábado y domingo son los ANTERIORES a la semana laboral. Última semana antes de las restricciones sanitarias.",
+   "dias_presentes": [
+    {
+     "fecha": "2020-03-07",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2228158,
+     "metro": 990740
+    },
+    {
+     "fecha": "2020-03-08",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1320342,
+     "metro": 630544
+    },
+    {
+     "fecha": "2020-03-09",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4263634,
+     "metro": 1997419
+    },
+    {
+     "fecha": "2020-03-10",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4521695,
+     "metro": 2124895
+    },
+    {
+     "fecha": "2020-03-11",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4048813,
+     "metro": 1956446
+    },
+    {
+     "fecha": "2020-03-12",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4330360,
+     "metro": 2072507
+    },
+    {
+     "fecha": "2020-03-13",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4315505,
+     "metro": 2074874
+    }
+   ],
+   "dias_laborales_usados": [
+    "2020-03-09",
+    "2020-03-10",
+    "2020-03-11",
+    "2020-03-12",
+    "2020-03-13"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0191,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4296001,
+    "factores": {
+     "lunes": 0.9925,
+     "martes": 1.0525,
+     "miercoles": 0.9425,
+     "jueves": 1.008,
+     "viernes": 1.0045
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5187,
+    "DL": 0.3073,
+    "SL_por_fecha": {
+     "2020-03-07": 0.5187
+    },
+    "DL_por_fecha": {
+     "2020-03-08": 0.3073
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2045228,
+    "factores": {
+     "lunes": 0.9766,
+     "martes": 1.039,
+     "miercoles": 0.9566,
+     "jueves": 1.0133,
+     "viernes": 1.0145
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.4844,
+    "DL": 0.3083,
+    "SL_por_fecha": {
+     "2020-03-07": 0.4844
+    },
+    "DL_por_fecha": {
+     "2020-03-08": 0.3083
+    }
+   },
+   "fuera_de_banda": [
+    "metro SL 0.484 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]"
+   ],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2020-11",
+   "anio": 2020,
+   "mes": 11,
+   "fuentes": [
+    "etapas202011_transparencia_9al15"
+   ],
+   "nota": "Pandemia.",
+   "dias_presentes": [
+    {
+     "fecha": "2020-11-09",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 2271073,
+     "metro": 1074146
+    },
+    {
+     "fecha": "2020-11-10",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 2230689,
+     "metro": 1057829
+    },
+    {
+     "fecha": "2020-11-11",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 2262579,
+     "metro": 1075442
+    },
+    {
+     "fecha": "2020-11-12",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 2268361,
+     "metro": 1086156
+    },
+    {
+     "fecha": "2020-11-13",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 2340093,
+     "metro": 1134968
+    },
+    {
+     "fecha": "2020-11-14",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 1373211,
+     "metro": 681349
+    },
+    {
+     "fecha": "2020-11-15",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 776472,
+     "metro": 373838
+    }
+   ],
+   "dias_laborales_usados": [
+    "2020-11-09",
+    "2020-11-10",
+    "2020-11-11",
+    "2020-11-12",
+    "2020-11-13"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.011,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 2274559,
+    "factores": {
+     "lunes": 0.9985,
+     "martes": 0.9807,
+     "miercoles": 0.9947,
+     "jueves": 0.9973,
+     "viernes": 1.0288
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.6037,
+    "DL": 0.3414,
+    "SL_por_fecha": {
+     "2020-11-14": 0.6037
+    },
+    "DL_por_fecha": {
+     "2020-11-15": 0.3414
+    }
+   },
+   "metro": {
+    "promedio_laboral": 1085708,
+    "factores": {
+     "lunes": 0.9894,
+     "martes": 0.9743,
+     "miercoles": 0.9905,
+     "jueves": 1.0004,
+     "viernes": 1.0454
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.6276,
+    "DL": 0.3443,
+    "SL_por_fecha": {
+     "2020-11-14": 0.6276
+    },
+    "DL_por_fecha": {
+     "2020-11-15": 0.3443
+    }
+   },
+   "fuera_de_banda": [
+    "sistema SL 0.604 fuera del rango de una semana lectiva 2025–26 [0.504–0.578]",
+    "metro SL 0.628 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]"
+   ],
+   "comparabilidad": "pandemia: no representa la semana normal",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2021-04",
+   "anio": 2021,
+   "mes": 4,
+   "fuentes": [
+    "etapas202104_transparencia"
+   ],
+   "nota": "Pandemia.",
+   "dias_presentes": [
+    {
+     "fecha": "2021-04-12",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1453018,
+     "metro": 630421
+    },
+    {
+     "fecha": "2021-04-13",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1385658,
+     "metro": 599802
+    },
+    {
+     "fecha": "2021-04-14",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1402107,
+     "metro": 607289
+    },
+    {
+     "fecha": "2021-04-15",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1422477,
+     "metro": 615583
+    },
+    {
+     "fecha": "2021-04-16",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1500022,
+     "metro": 653295
+    },
+    {
+     "fecha": "2021-04-17",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 677001,
+     "metro": 283692
+    },
+    {
+     "fecha": "2021-04-18",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 369214,
+     "metro": 146154
+    }
+   ],
+   "dias_laborales_usados": [
+    "2021-04-12",
+    "2021-04-13",
+    "2021-04-14",
+    "2021-04-15",
+    "2021-04-16"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0071,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 1432656,
+    "factores": {
+     "lunes": 1.0142,
+     "martes": 0.9672,
+     "miercoles": 0.9787,
+     "jueves": 0.9929,
+     "viernes": 1.047
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.4725,
+    "DL": 0.2577,
+    "SL_por_fecha": {
+     "2021-04-17": 0.4725
+    },
+    "DL_por_fecha": {
+     "2021-04-18": 0.2577
+    }
+   },
+   "metro": {
+    "promedio_laboral": 621278,
+    "factores": {
+     "lunes": 1.0147,
+     "martes": 0.9654,
+     "miercoles": 0.9775,
+     "jueves": 0.9908,
+     "viernes": 1.0515
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.4566,
+    "DL": 0.2352,
+    "SL_por_fecha": {
+     "2021-04-17": 0.4566
+    },
+    "DL_por_fecha": {
+     "2021-04-18": 0.2352
+    }
+   },
+   "fuera_de_banda": [
+    "sistema SL 0.472 fuera del rango de una semana lectiva 2025–26 [0.504–0.578]",
+    "sistema DL 0.258 fuera del rango de una semana lectiva 2025–26 [0.281–0.347]",
+    "metro SL 0.457 fuera del rango de una semana lectiva 2025–26 [0.512–0.600]",
+    "metro DL 0.235 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "pandemia: no representa la semana normal",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2022-08",
+   "anio": 2022,
+   "mes": 8,
+   "fuentes": [
+    "etapas_082022_8al14_transparencia"
+   ],
+   "nota": "El archivo dice 8 al 14 pero no trae el lunes 8.",
+   "dias_presentes": [
+    {
+     "fecha": "2022-08-09",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4644701,
+     "metro": 2796322
+    },
+    {
+     "fecha": "2022-08-10",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4664375,
+     "metro": 2804926
+    },
+    {
+     "fecha": "2022-08-11",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4677478,
+     "metro": 2819126
+    },
+    {
+     "fecha": "2022-08-12",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4647008,
+     "metro": 2811113
+    },
+    {
+     "fecha": "2022-08-13",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2478495,
+     "metro": 1516265
+    },
+    {
+     "fecha": "2022-08-14",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1301683,
+     "metro": 772492
+    }
+   ],
+   "dias_laborales_usados": [
+    "2022-08-09",
+    "2022-08-10",
+    "2022-08-11",
+    "2022-08-12"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.3144,
+   "usa_metro_sin_repetidos": true,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4658390,
+    "factores": {
+     "martes": 0.9971,
+     "miercoles": 1.0013,
+     "jueves": 1.0041,
+     "viernes": 0.9976
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.532,
+    "DL": 0.2794,
+    "SL_por_fecha": {
+     "2022-08-13": 0.532
+    },
+    "DL_por_fecha": {
+     "2022-08-14": 0.2794
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2807872,
+    "factores": {
+     "martes": 0.9959,
+     "miercoles": 0.999,
+     "jueves": 1.004,
+     "viernes": 1.0012
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.54,
+    "DL": 0.2751,
+    "SL_por_fecha": {
+     "2022-08-13": 0.54
+    },
+    "DL_por_fecha": {
+     "2022-08-14": 0.2751
+    }
+   },
+   "sistema_sr": {
+    "promedio_laboral": 3773772,
+    "factores": {
+     "martes": 0.997,
+     "miercoles": 1.0026,
+     "jueves": 1.0038,
+     "viernes": 0.9966
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5292,
+    "DL": 0.2837,
+    "SL_por_fecha": {
+     "2022-08-13": 0.5292
+    },
+    "DL_por_fecha": {
+     "2022-08-14": 0.2837
+    }
+   },
+   "metro_sr": {
+    "promedio_laboral": 1923254,
+    "factores": {
+     "martes": 0.9953,
+     "miercoles": 1.0005,
+     "jueves": 1.0034,
+     "viernes": 1.0009
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5381,
+    "DL": 0.2815,
+    "SL_por_fecha": {
+     "2022-08-13": 0.5381
+    },
+    "DL_por_fecha": {
+     "2022-08-14": 0.2815
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "Metro con 31.4% de filas repetidas: se usa Metro sin repetidos (estimación, sesgo ≈ −2 %)",
+   "medida_patron": {
+    "sistema": "sistema_sr",
+    "metro": "metro_sr"
+   }
+  },
+  {
+   "corte": "2023-04",
+   "anio": 2023,
+   "mes": 4,
+   "fuentes": [
+    "etapas_042023_17al23_transparencia"
+   ],
+   "nota": "",
+   "dias_presentes": [
+    {
+     "fecha": "2023-04-17",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5175388,
+     "metro": 3079122
+    },
+    {
+     "fecha": "2023-04-18",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5197680,
+     "metro": 3094338
+    },
+    {
+     "fecha": "2023-04-19",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5225398,
+     "metro": 3113002
+    },
+    {
+     "fecha": "2023-04-20",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5249131,
+     "metro": 3134929
+    },
+    {
+     "fecha": "2023-04-21",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5141220,
+     "metro": 3057893
+    },
+    {
+     "fecha": "2023-04-22",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2667885,
+     "metro": 1604647
+    },
+    {
+     "fecha": "2023-04-23",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1454502,
+     "metro": 840271
+    }
+   ],
+   "dias_laborales_usados": [
+    "2023-04-17",
+    "2023-04-18",
+    "2023-04-19",
+    "2023-04-20",
+    "2023-04-21"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.3149,
+   "usa_metro_sin_repetidos": true,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5197763,
+    "factores": {
+     "lunes": 0.9957,
+     "martes": 1.0,
+     "miercoles": 1.0053,
+     "jueves": 1.0099,
+     "viernes": 0.9891
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5133,
+    "DL": 0.2798,
+    "SL_por_fecha": {
+     "2023-04-22": 0.5133
+    },
+    "DL_por_fecha": {
+     "2023-04-23": 0.2798
+    }
+   },
+   "metro": {
+    "promedio_laboral": 3095857,
+    "factores": {
+     "lunes": 0.9946,
+     "martes": 0.9995,
+     "miercoles": 1.0055,
+     "jueves": 1.0126,
+     "viernes": 0.9877
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5183,
+    "DL": 0.2714,
+    "SL_por_fecha": {
+     "2023-04-22": 0.5183
+    },
+    "DL_por_fecha": {
+     "2023-04-23": 0.2714
+    }
+   },
+   "sistema_sr": {
+    "promedio_laboral": 4220232,
+    "factores": {
+     "lunes": 0.9957,
+     "martes": 1.0005,
+     "miercoles": 1.0046,
+     "jueves": 1.0098,
+     "viernes": 0.9894
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5122,
+    "DL": 0.2853,
+    "SL_por_fecha": {
+     "2023-04-22": 0.5122
+    },
+    "DL_por_fecha": {
+     "2023-04-23": 0.2853
+    }
+   },
+   "metro_sr": {
+    "promedio_laboral": 2118325,
+    "factores": {
+     "lunes": 0.9941,
+     "martes": 1.0003,
+     "miercoles": 1.0043,
+     "jueves": 1.0137,
+     "viernes": 0.9876
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5185,
+    "DL": 0.2784,
+    "SL_por_fecha": {
+     "2023-04-22": 0.5185
+    },
+    "DL_por_fecha": {
+     "2023-04-23": 0.2784
+    }
+   },
+   "fuera_de_banda": [
+    "metro DL 0.278 fuera del rango de una semana lectiva 2025–26 [0.280–0.366]"
+   ],
+   "comparabilidad": "Metro con 31.5% de filas repetidas: se usa Metro sin repetidos (estimación, sesgo ≈ −2 %)",
+   "medida_patron": {
+    "sistema": "sistema_sr",
+    "metro": "metro_sr"
+   }
+  },
+  {
+   "corte": "2023-08",
+   "anio": 2023,
+   "mes": 8,
+   "fuentes": [
+    "etapas_082023_7al13"
+   ],
+   "nota": "Tabla PARCIAL (≈21 % de las filas de Metro de la tabla de subidas de la misma semana; cortes_metadatos.json): factores no utilizables.",
+   "dias_presentes": [
+    {
+     "fecha": "2023-08-07",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1040791,
+     "metro": 588428
+    },
+    {
+     "fecha": "2023-08-08",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1213885,
+     "metro": 700987
+    },
+    {
+     "fecha": "2023-08-09",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1063263,
+     "metro": 607979
+    },
+    {
+     "fecha": "2023-08-10",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1160871,
+     "metro": 681283
+    },
+    {
+     "fecha": "2023-08-11",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 1194787,
+     "metro": 693348
+    }
+   ],
+   "dias_laborales_usados": [],
+   "laborales_excluidos": {
+    "2023-08-07": "tabla parcial",
+    "2023-08-08": "tabla parcial",
+    "2023-08-09": "tabla parcial",
+    "2023-08-10": "tabla parcial",
+    "2023-08-11": "tabla parcial"
+   },
+   "repetidos_metro_clave": 0.311,
+   "usa_metro_sin_repetidos": true,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": null,
+    "factores": {},
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro": {
+    "promedio_laboral": null,
+    "factores": {},
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "sistema_sr": {
+    "promedio_laboral": null,
+    "factores": {},
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro_sr": {
+    "promedio_laboral": null,
+    "factores": {},
+    "factores_dias_excluidos": {},
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "tabla parcial: no utilizable; Metro con 31.1% de filas repetidas: se usa Metro sin repetidos (estimación, sesgo ≈ −2 %); sólo días laborales",
+   "medida_patron": {
+    "sistema": "sistema_sr",
+    "metro": "metro_sr"
+   }
+  },
+  {
+   "corte": "2023-11",
+   "anio": 2023,
+   "mes": 11,
+   "fuentes": [
+    "etapas_112023_6al12"
+   ],
+   "nota": "9.467 líneas corruptas (sin fecha); el viernes 10 viene incompleto (cortes_metadatos.json).",
+   "dias_presentes": [
+    {
+     "fecha": "2023-11-06",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4029473,
+     "metro": 2302439
+    },
+    {
+     "fecha": "2023-11-07",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 3949929,
+     "metro": 2262702
+    },
+    {
+     "fecha": "2023-11-08",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 3913311,
+     "metro": 2247512
+    },
+    {
+     "fecha": "2023-11-09",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 3931520,
+     "metro": 2259198
+    },
+    {
+     "fecha": "2023-11-10",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 3169951,
+     "metro": 1855781
+    }
+   ],
+   "dias_laborales_usados": [
+    "2023-11-06",
+    "2023-11-07",
+    "2023-11-08",
+    "2023-11-09"
+   ],
+   "laborales_excluidos": {
+    "2023-11-10": "total 0.806 de la mediana laboral de la semana (< 0,85)"
+   },
+   "repetidos_metro_clave": 0.3094,
+   "usa_metro_sin_repetidos": true,
+   "filas_sin_fecha": 9489,
+   "fechas_fuera_de_semana": {
+    "2023-11-01": 2
+   },
+   "sistema": {
+    "promedio_laboral": 3956058,
+    "factores": {
+     "lunes": 1.0186,
+     "martes": 0.9985,
+     "miercoles": 0.9892,
+     "jueves": 0.9938
+    },
+    "factores_dias_excluidos": {
+     "viernes": 0.8013
+    },
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro": {
+    "promedio_laboral": 2267963,
+    "factores": {
+     "lunes": 1.0152,
+     "martes": 0.9977,
+     "miercoles": 0.991,
+     "jueves": 0.9961
+    },
+    "factores_dias_excluidos": {
+     "viernes": 0.8183
+    },
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "sistema_sr": {
+    "promedio_laboral": 3253710,
+    "factores": {
+     "lunes": 1.0195,
+     "martes": 0.9987,
+     "miercoles": 0.9884,
+     "jueves": 0.9935
+    },
+    "factores_dias_excluidos": {
+     "viernes": 0.7986
+    },
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "metro_sr": {
+    "promedio_laboral": 1565614,
+    "factores": {
+     "lunes": 1.0156,
+     "martes": 0.9978,
+     "miercoles": 0.9902,
+     "jueves": 0.9965
+    },
+    "factores_dias_excluidos": {
+     "viernes": 0.8202
+    },
+    "SL": null,
+    "DL": null,
+    "SL_por_fecha": {},
+    "DL_por_fecha": {}
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "Metro con 30.9% de filas repetidas: se usa Metro sin repetidos (estimación, sesgo ≈ −2 %); sólo días laborales; día(s) laboral(es) excluidos del promedio: 2023-11-10",
+   "medida_patron": {
+    "sistema": "sistema_sr",
+    "metro": "metro_sr"
+   }
+  },
+  {
+   "corte": "2024-04",
+   "anio": 2024,
+   "mes": 4,
+   "fuentes": [
+    "etapas202404_transparencia_15al21"
+   ],
+   "nota": "Un .csv.gz por día.",
+   "dias_presentes": [
+    {
+     "fecha": "2024-04-15",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4719030,
+     "metro": 2291715
+    },
+    {
+     "fecha": "2024-04-16",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4856261,
+     "metro": 2357027
+    },
+    {
+     "fecha": "2024-04-17",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4860663,
+     "metro": 2363909
+    },
+    {
+     "fecha": "2024-04-18",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4870399,
+     "metro": 2371918
+    },
+    {
+     "fecha": "2024-04-19",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4825818,
+     "metro": 2364816
+    },
+    {
+     "fecha": "2024-04-20",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2608046,
+     "metro": 1303875
+    },
+    {
+     "fecha": "2024-04-21",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1445689,
+     "metro": 702257
+    }
+   ],
+   "dias_laborales_usados": [
+    "2024-04-15",
+    "2024-04-16",
+    "2024-04-17",
+    "2024-04-18",
+    "2024-04-19"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0184,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4826434,
+    "factores": {
+     "lunes": 0.9777,
+     "martes": 1.0062,
+     "miercoles": 1.0071,
+     "jueves": 1.0091,
+     "viernes": 0.9999
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5404,
+    "DL": 0.2995,
+    "SL_por_fecha": {
+     "2024-04-20": 0.5404
+    },
+    "DL_por_fecha": {
+     "2024-04-21": 0.2995
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2349877,
+    "factores": {
+     "lunes": 0.9752,
+     "martes": 1.003,
+     "miercoles": 1.006,
+     "jueves": 1.0094,
+     "viernes": 1.0064
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5549,
+    "DL": 0.2988,
+    "SL_por_fecha": {
+     "2024-04-20": 0.5549
+    },
+    "DL_por_fecha": {
+     "2024-04-21": 0.2988
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2024-11",
+   "anio": 2024,
+   "mes": 11,
+   "fuentes": [
+    "Tabla-de-Etapas-Nov24"
+   ],
+   "nota": "Un .csv.gz por día.",
+   "dias_presentes": [
+    {
+     "fecha": "2024-11-18",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4787836,
+     "metro": 2263585
+    },
+    {
+     "fecha": "2024-11-19",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4861726,
+     "metro": 2338836
+    },
+    {
+     "fecha": "2024-11-20",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4897118,
+     "metro": 2339554
+    },
+    {
+     "fecha": "2024-11-21",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4830969,
+     "metro": 2307896
+    },
+    {
+     "fecha": "2024-11-22",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4722466,
+     "metro": 2257841
+    },
+    {
+     "fecha": "2024-11-23",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2563888,
+     "metro": 1236439
+    },
+    {
+     "fecha": "2024-11-24",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": "Segunda Vuelta Elección Gobernadores Regionales",
+     "sistema": 2015003,
+     "metro": 962851
+    }
+   ],
+   "dias_laborales_usados": [
+    "2024-11-18",
+    "2024-11-19",
+    "2024-11-20",
+    "2024-11-21",
+    "2024-11-22"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0176,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4820023,
+    "factores": {
+     "lunes": 0.9933,
+     "martes": 1.0087,
+     "miercoles": 1.016,
+     "jueves": 1.0023,
+     "viernes": 0.9798
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5319,
+    "DL": null,
+    "SL_por_fecha": {
+     "2024-11-23": 0.5319
+    },
+    "DL_por_fecha": {},
+    "fin_de_semana_feriado": {
+     "2024-11-24": {
+      "dia": "domingo",
+      "feriado": "Segunda Vuelta Elección Gobernadores Regionales",
+      "razon_sobre_laboral": 0.418
+     }
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2301542,
+    "factores": {
+     "lunes": 0.9835,
+     "martes": 1.0162,
+     "miercoles": 1.0165,
+     "jueves": 1.0028,
+     "viernes": 0.981
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5372,
+    "DL": null,
+    "SL_por_fecha": {
+     "2024-11-23": 0.5372
+    },
+    "DL_por_fecha": {},
+    "fin_de_semana_feriado": {
+     "2024-11-24": {
+      "dia": "domingo",
+      "feriado": "Segunda Vuelta Elección Gobernadores Regionales",
+      "razon_sobre_laboral": 0.4184
+     }
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2025-04",
+   "anio": 2025,
+   "mes": 4,
+   "fuentes": [
+    "Tabla-de-etapas-011025"
+   ],
+   "nota": "Publicado como 'Tabla-de-etapas-011025' (fecha de publicación 01-10-2025); los días son 21–27 de abril de 2025.",
+   "dias_presentes": [
+    {
+     "fecha": "2025-04-21",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4855306,
+     "metro": 2320787
+    },
+    {
+     "fecha": "2025-04-22",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4934553,
+     "metro": 2385313
+    },
+    {
+     "fecha": "2025-04-23",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4888399,
+     "metro": 2369434
+    },
+    {
+     "fecha": "2025-04-24",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4948004,
+     "metro": 2402968
+    },
+    {
+     "fecha": "2025-04-25",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4751735,
+     "metro": 2311866
+    },
+    {
+     "fecha": "2025-04-26",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2605384,
+     "metro": 1282385
+    },
+    {
+     "fecha": "2025-04-27",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1464154,
+     "metro": 693469
+    }
+   ],
+   "dias_laborales_usados": [
+    "2025-04-21",
+    "2025-04-22",
+    "2025-04-23",
+    "2025-04-24",
+    "2025-04-25"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0175,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4875599,
+    "factores": {
+     "lunes": 0.9958,
+     "martes": 1.0121,
+     "miercoles": 1.0026,
+     "jueves": 1.0149,
+     "viernes": 0.9746
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5344,
+    "DL": 0.3003,
+    "SL_por_fecha": {
+     "2025-04-26": 0.5344
+    },
+    "DL_por_fecha": {
+     "2025-04-27": 0.3003
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2358074,
+    "factores": {
+     "lunes": 0.9842,
+     "martes": 1.0116,
+     "miercoles": 1.0048,
+     "jueves": 1.019,
+     "viernes": 0.9804
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5438,
+    "DL": 0.2941,
+    "SL_por_fecha": {
+     "2025-04-26": 0.5438
+    },
+    "DL_por_fecha": {
+     "2025-04-27": 0.2941
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2025-11",
+   "anio": 2025,
+   "mes": 11,
+   "fuentes": [
+    "Etapas_Nov_2025"
+   ],
+   "nota": "Un .csv.gz por día; sábado 8 y domingo 9 son ANTERIORES a la semana laboral 10–14.",
+   "dias_presentes": [
+    {
+     "fecha": "2025-11-08",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2787086,
+     "metro": 1418353
+    },
+    {
+     "fecha": "2025-11-09",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1586344,
+     "metro": 777350
+    },
+    {
+     "fecha": "2025-11-10",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4931940,
+     "metro": 2354587
+    },
+    {
+     "fecha": "2025-11-11",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5016354,
+     "metro": 2436276
+    },
+    {
+     "fecha": "2025-11-12",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5019482,
+     "metro": 2441980
+    },
+    {
+     "fecha": "2025-11-13",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4916308,
+     "metro": 2379702
+    },
+    {
+     "fecha": "2025-11-14",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 4827056,
+     "metro": 2339485
+    }
+   ],
+   "dias_laborales_usados": [
+    "2025-11-10",
+    "2025-11-11",
+    "2025-11-12",
+    "2025-11-13",
+    "2025-11-14"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0184,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 4942228,
+    "factores": {
+     "lunes": 0.9979,
+     "martes": 1.015,
+     "miercoles": 1.0156,
+     "jueves": 0.9948,
+     "viernes": 0.9767
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5639,
+    "DL": 0.321,
+    "SL_por_fecha": {
+     "2025-11-08": 0.5639
+    },
+    "DL_por_fecha": {
+     "2025-11-09": 0.321
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2390406,
+    "factores": {
+     "lunes": 0.985,
+     "martes": 1.0192,
+     "miercoles": 1.0216,
+     "jueves": 0.9955,
+     "viernes": 0.9787
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5934,
+    "DL": 0.3252,
+    "SL_por_fecha": {
+     "2025-11-08": 0.5934
+    },
+    "DL_por_fecha": {
+     "2025-11-09": 0.3252
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  },
+  {
+   "corte": "2026-04",
+   "anio": 2026,
+   "mes": 4,
+   "fuentes": [
+    "Etapas-2026-04"
+   ],
+   "nota": "Un .csv.gz por día; sábado 11 y domingo 12 son ANTERIORES a la semana laboral 13–17.",
+   "dias_presentes": [
+    {
+     "fecha": "2026-04-11",
+     "dia": "sabado",
+     "tipo_dia_fuente": "SABADO",
+     "feriado": null,
+     "sistema": 2766864,
+     "metro": 1409869
+    },
+    {
+     "fecha": "2026-04-12",
+     "dia": "domingo",
+     "tipo_dia_fuente": "DOMINGO",
+     "feriado": null,
+     "sistema": 1585544,
+     "metro": 778745
+    },
+    {
+     "fecha": "2026-04-13",
+     "dia": "lunes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5027059,
+     "metro": 2427328
+    },
+    {
+     "fecha": "2026-04-14",
+     "dia": "martes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5055365,
+     "metro": 2460442
+    },
+    {
+     "fecha": "2026-04-15",
+     "dia": "miercoles",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5108476,
+     "metro": 2495822
+    },
+    {
+     "fecha": "2026-04-16",
+     "dia": "jueves",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5098041,
+     "metro": 2497849
+    },
+    {
+     "fecha": "2026-04-17",
+     "dia": "viernes",
+     "tipo_dia_fuente": "LABORAL",
+     "feriado": null,
+     "sistema": 5030206,
+     "metro": 2465686
+    }
+   ],
+   "dias_laborales_usados": [
+    "2026-04-13",
+    "2026-04-14",
+    "2026-04-15",
+    "2026-04-16",
+    "2026-04-17"
+   ],
+   "laborales_excluidos": {},
+   "repetidos_metro_clave": 0.0185,
+   "usa_metro_sin_repetidos": false,
+   "filas_sin_fecha": 0,
+   "fechas_fuera_de_semana": {},
+   "sistema": {
+    "promedio_laboral": 5063829,
+    "factores": {
+     "lunes": 0.9927,
+     "martes": 0.9983,
+     "miercoles": 1.0088,
+     "jueves": 1.0068,
+     "viernes": 0.9934
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5464,
+    "DL": 0.3131,
+    "SL_por_fecha": {
+     "2026-04-11": 0.5464
+    },
+    "DL_por_fecha": {
+     "2026-04-12": 0.3131
+    }
+   },
+   "metro": {
+    "promedio_laboral": 2469425,
+    "factores": {
+     "lunes": 0.983,
+     "martes": 0.9964,
+     "miercoles": 1.0107,
+     "jueves": 1.0115,
+     "viernes": 0.9985
+    },
+    "factores_dias_excluidos": {},
+    "SL": 0.5709,
+    "DL": 0.3154,
+    "SL_por_fecha": {
+     "2026-04-11": 0.5709
+    },
+    "DL_por_fecha": {
+     "2026-04-12": 0.3154
+    }
+   },
+   "fuera_de_banda": [],
+   "comparabilidad": "comparable",
+   "medida_patron": {
+    "sistema": "sistema",
+    "metro": "metro"
+   }
+  }
+ ],
+ "contraste_publica_vs_saip": [
+  {
+   "fecha": "2025-11-08",
+   "corte": "2025-11",
+   "publica_sistema": 2787086,
+   "saip_sistema": 2787086,
+   "publica_metro": 1418353,
+   "saip_metro": 1418353,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-09",
+   "corte": "2025-11",
+   "publica_sistema": 1586344,
+   "saip_sistema": 1586344,
+   "publica_metro": 777350,
+   "saip_metro": 777350,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-10",
+   "corte": "2025-11",
+   "publica_sistema": 4931940,
+   "saip_sistema": 4931940,
+   "publica_metro": 2354587,
+   "saip_metro": 2354587,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-11",
+   "corte": "2025-11",
+   "publica_sistema": 5016354,
+   "saip_sistema": 5016354,
+   "publica_metro": 2436276,
+   "saip_metro": 2436276,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-12",
+   "corte": "2025-11",
+   "publica_sistema": 5019482,
+   "saip_sistema": 5019482,
+   "publica_metro": 2441980,
+   "saip_metro": 2441980,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-13",
+   "corte": "2025-11",
+   "publica_sistema": 4916308,
+   "saip_sistema": 4916308,
+   "publica_metro": 2379702,
+   "saip_metro": 2379702,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2025-11-14",
+   "corte": "2025-11",
+   "publica_sistema": 4827056,
+   "saip_sistema": 4827056,
+   "publica_metro": 2339485,
+   "saip_metro": 2339485,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-11",
+   "corte": "2026-04",
+   "publica_sistema": 2766864,
+   "saip_sistema": 2766864,
+   "publica_metro": 1409869,
+   "saip_metro": 1409869,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-12",
+   "corte": "2026-04",
+   "publica_sistema": 1585544,
+   "saip_sistema": 1585544,
+   "publica_metro": 778745,
+   "saip_metro": 778745,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-13",
+   "corte": "2026-04",
+   "publica_sistema": 5027059,
+   "saip_sistema": 5027059,
+   "publica_metro": 2427328,
+   "saip_metro": 2427328,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-14",
+   "corte": "2026-04",
+   "publica_sistema": 5055365,
+   "saip_sistema": 5055365,
+   "publica_metro": 2460442,
+   "saip_metro": 2460442,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-15",
+   "corte": "2026-04",
+   "publica_sistema": 5108476,
+   "saip_sistema": 5108476,
+   "publica_metro": 2495822,
+   "saip_metro": 2495822,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-16",
+   "corte": "2026-04",
+   "publica_sistema": 5098041,
+   "saip_sistema": 5098041,
+   "publica_metro": 2497849,
+   "saip_metro": 2497849,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  },
+  {
+   "fecha": "2026-04-17",
+   "corte": "2026-04",
+   "publica_sistema": 5030206,
+   "saip_sistema": 5030206,
+   "publica_metro": 2465686,
+   "saip_metro": 2465686,
+   "razon_sistema": 1.0,
+   "razon_metro": 1.0
+  }
+ ]
+}
